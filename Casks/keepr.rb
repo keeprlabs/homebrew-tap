@@ -3,8 +3,8 @@
 # by the update-homebrew job in .github/workflows/release.yml.
 
 cask "keepr" do
-  version "0.2.2"
-  sha256 "d9ab662baaf7cf83c13343724d38f0ea4fcf57b0478b83e0637e62c536848d27"
+  version "0.2.3"
+  sha256 "902e0390a18431ed8206220d403704f2b26c8cf1114eb2a992b65042b2167141"
 
   url "https://github.com/keeprlabs/keepr/releases/download/v#{version}/Keepr_#{version}_universal.dmg"
   name "Keepr"
