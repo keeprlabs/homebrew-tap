@@ -4,7 +4,7 @@
 
 cask "keepr" do
   version "0.2.7"
-  sha256 "a15faecdbd2fc2d2a4ec06d95d8fb3fb2e505f0d57288366b107aca1b8c89916"
+  sha256 "18bb5590cd41a09f9033559049e678e4f66bf6ba2cf20f04c307cf33519c9194"
 
   url "https://github.com/keeprlabs/keepr/releases/download/v#{version}/Keepr_#{version}_universal.dmg"
   name "Keepr"
