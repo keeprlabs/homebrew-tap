@@ -34,18 +34,12 @@ class CtxdCode < Formula
 
   depends_on "keeprlabs/tap/ctxd"
 
+  # Homebrew cd's into the single top-level directory of the tarball
+  # before running `install`, so we install relative to that — not
+  # prefixed by ctxd-code-<version>-<target>/.
   def install
-    bin.install "ctxd-code-#{version}-#{stage_target}/ctxd-code"
-    doc.install "ctxd-code-#{version}-#{stage_target}/README.md",
-                "ctxd-code-#{version}-#{stage_target}/LICENSE"
-  end
-
-  def stage_target
-    if OS.mac?
-      Hardware::CPU.arm? ? "aarch64-apple-darwin" : "x86_64-apple-darwin"
-    else
-      Hardware::CPU.arm? ? "aarch64-unknown-linux-gnu" : "x86_64-unknown-linux-gnu"
-    end
+    bin.install "ctxd-code"
+    doc.install "README.md", "LICENSE"
   end
 
   test do
