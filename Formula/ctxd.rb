@@ -15,30 +15,35 @@ class Ctxd < Formula
   on_macos do
     on_arm do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "5d74396d044e931916e1c9d4e4d38be6bcc5accb09c85922ee2b43e1a8573585"
+      sha256 "3c3d2a09f19cf8dce19e61686a1af01d1904a52db0087baf7c4f74c496370721"
     end
     on_intel do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "096e543226eb4a497a9440a42e1f1356c8d4cad61d8f810167282c6f09d6cdb6"
+      sha256 "43a86546b384937ee11e27c8f4b78d849a15c06fe1c77735bf37b0c73024c951"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "ae8a9e09dfe2e21499f997a1eb395f358df495fe3718f7490e5ab0dc226b69b2"
+      sha256 "8a9a18369d38af2ec4e63058e49966da0d193adb3c6c2ccecdea71da9bbddc42"
     end
     on_intel do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "e876e2703ae89828960a701a777b45db796bc67f5bfec873cf0c79aec027a494"
+      sha256 "06ad00186b3bb4c47b718dde73fc66971d1f17f99aa144e1e378a88d5779a560"
     end
   end
 
   def install
-    # Each tarball contains a single top-level dir (ctxd-<version>-<target>/);
-    # Homebrew cd's into it before calling `install`, so the binary is at "ctxd"
-    # relative to the working directory.
-    bin.install "ctxd"
+    bin.install "ctxd-#{version}-#{stage_target}/ctxd"
+  end
+
+  def stage_target
+    if OS.mac?
+      Hardware::CPU.arm? ? "aarch64-apple-darwin" : "x86_64-apple-darwin"
+    else
+      Hardware::CPU.arm? ? "aarch64-unknown-linux-gnu" : "x86_64-unknown-linux-gnu"
+    end
   end
 
   test do
