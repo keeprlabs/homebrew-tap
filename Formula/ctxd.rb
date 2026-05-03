@@ -9,28 +9,28 @@
 class Ctxd < Formula
   desc "Context substrate for AI agents — single-binary daemon, append-only event log, capabilities, MCP-native"
   homepage "https://github.com/keeprlabs/ctxd"
-  version "0.4.0"
+  version "0.4.1"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-aarch64-apple-darwin.tar.gz"
-      sha256 "9af429a1bc049c7c128a23f22aa3e7678347d9d16c52e29ccbb564260ab2886b"
+      sha256 "bbc894fb9fbb631cb2eb0b787af5910b05f69b447ea5f28f9a094c1c4e4e02c8"
     end
     on_intel do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-x86_64-apple-darwin.tar.gz"
-      sha256 "1d89500ed9aee1c29abae95d1255855556b26237277f4abec569d7d6ef275582"
+      sha256 "2c973451fe990e0e3cd0f696b95d1b4274565a27afffc025163256fccf871e67"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "baa9ad2d6af46bf417cadebfa8c61862eca2e47908fb93dd3f0a6bed00e27e15"
+      sha256 "c989805a8676fe971287ca820b27c66114aa11b4fb6c0c49e9690b44208a6e94"
     end
     on_intel do
       url "https://github.com/keeprlabs/ctxd/releases/download/v#{version}/ctxd-#{version}-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "d72c42e2beefa15a42ce7cf99edc21bd114204f50625d01c882203b8636d0b36"
+      sha256 "c8d8275f02f53bb52d2e3fa717a003c9a62d8c218bfee95e908efa0240f79ac0"
     end
   end
 
